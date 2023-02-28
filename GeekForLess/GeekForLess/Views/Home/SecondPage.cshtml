@@ -1,0 +1,12 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = Model[0];
+}
+
+<h1>"Folder" - @Model[0]</h1>
+
+@for (int i = 1; i < Model.Count; i++)
+{
+    <div class="links"><a href="@Url.Action("SecondPage", "Home", new { folderOwner = Model[i] })">@Model[i]</a></div>
+    
+}
